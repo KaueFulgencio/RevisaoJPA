@@ -1,0 +1,15 @@
+public class ${tableName} {
+#foreach($column in $columns)
+    private ${column.TYPE_NAME} ${column.COLUMN_NAME};
+#end
+
+#foreach($column in $columns)
+    public ${column.TYPE_NAME} get${column.COLUMN_NAME?cap_first}() {
+        return ${column.COLUMN_NAME};
+    }
+
+    public void set${column.COLUMN_NAME?cap_first}(${column.TYPE_NAME} ${column.COLUMN_NAME}) {
+        this.${column.COLUMN_NAME} = ${column.COLUMN_NAME};
+    }
+#end
+}
